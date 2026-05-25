@@ -1,4 +1,5 @@
 from selenium.webdriver.common.by import By
+import logging
 
 ####################################################################################################
 # Consigna 1: Automatización de Login
@@ -65,8 +66,8 @@ def test_inventory(login_handler):
     nombre_primer_producto = driver.find_element(By.CLASS_NAME, "inventory_item_name ")
     precio_primer_producto = driver.find_element(By.CLASS_NAME, "inventory_item_price ")
 
-    print(f"++ Nombre Primer Producto: {nombre_primer_producto.text}")
-    print(f"++ Precio Primer Producto: {precio_primer_producto.text}")
+    logging.info(f"++ Nombre Primer Producto: {nombre_primer_producto.text}")
+    logging.info(f"++ Precio Primer Producto: {precio_primer_producto.text}")
 
 
 ####################################################################################################

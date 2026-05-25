@@ -24,23 +24,23 @@ Comandos de ejecución:
 
 - Todas las pruebas
 ```
-py -m pytest -v -s
+py -m pytest -v --html=reporte.html --self-contained-html --log-cli-level=INFO
 ```
 
 - Prueba de Login
 
 ```
-py -m pytest -v -s tests/test_login.py::test_login_validation
+py -m pytest -v --html=reporte.html --self-contained-html --log-cli-level=INFO tests/test_login.py::test_login_validation
 ```
 
 - Prueba de Inventario
 
 ```
-py -m pytest -v -s tests/test_login.py::test_inventory
+py -m pytest -v --html=reporte.html --self-contained-html --log-cli-level=INFO tests/test_login.py::test_inventory
 ```
 
 - Prueba de Carrito
 
 ```
-py -m pytest -v -s tests/test_login.py::test_carrito
+py -m pytest -v --html=reporte.html --self-contained-html --log-cli-level=INFO tests/test_login.py::test_carrito
 ```
