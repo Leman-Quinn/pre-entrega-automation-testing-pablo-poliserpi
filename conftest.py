@@ -3,10 +3,12 @@ from selenium import webdriver
 from utils.login import login
 
 
+# Fixtures para automatizacion de login
 @pytest.fixture
 def driver():
     driver = webdriver.Firefox()
-    driver.get("https://www.saucedemo.com")
+
+    driver.get("https://www.SauceDemo.com")
 
     yield driver
 
