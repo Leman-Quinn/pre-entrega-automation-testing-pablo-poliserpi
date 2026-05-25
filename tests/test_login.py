@@ -41,6 +41,32 @@ def test_login_validation(login_handler):
 ####################################################################################################
 
 
+def test_inventory(login_handler):
+    driver = login_handler
+
+    items_inventario = driver.find_elements(By.CLASS_NAME, "inventory_item")
+
+    assert len(items_inventario) >= 1
+
+    icono_menu = driver.find_element(By.ID, "react-burger-menu-btn")
+
+    assert icono_menu.is_displayed() == True
+
+    filtro_desplegable = driver.find_element(By.CLASS_NAME, "product_sort_container")
+
+    assert filtro_desplegable.is_displayed() == True
+
+    badge_carrito = driver.find_element(By.CLASS_NAME, "shopping_cart_link")
+
+    assert badge_carrito.is_displayed() == True
+
+    nombre_primer_producto = driver.find_element(By.CLASS_NAME, "inventory_item_name ")
+    precio_primer_producto = driver.find_element(By.CLASS_NAME, "inventory_item_price ")
+
+    print(f"++ Nombre Primer Producto: {nombre_primer_producto.text}")
+    print(f"++ Precio Primer Producto: {precio_primer_producto.text}")
+
+
 ####################################################################################################
 # Interacción con Productos: (Clase 8)
 # Caso de Prueba de Carrito:
