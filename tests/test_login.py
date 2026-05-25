@@ -113,17 +113,6 @@ def test_carrito(login_handler):
 
 
 ####################################################################################################
-# Repositorio en GitHub:
-# Sube el proyecto a un repositorio en GitHub
-# Realiza commits frecuentes y con mensajes descriptivos que muestren el progreso del proyecto
-####################################################################################################
-# README.md:
-# Incluye un archivo README.md que explique:
-# El propósito del proyecto
-# Las tecnologías utilizadas
-# Cómo instalar las dependencias
-# Cómo ejecutar las pruebas
-####################################################################################################
 # Generar reporte en HTML de las pruebas realizadas:
 # pytest pre-entrega-final/test_saucedemo.py -v --html=reporte.html
 ####################################################################################################
