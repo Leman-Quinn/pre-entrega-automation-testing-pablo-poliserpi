@@ -1,3 +1,5 @@
+from selenium.webdriver.common.by import By
+
 ####################################################################################################
 # Consigna 1: Automatización de Login
 # Navegar a la página de login de saucedemo.com
@@ -12,7 +14,17 @@
 def test_login_validation(login_handler):
     driver = login_handler
 
-    assert "/inventory.html" in driver.current_url
+    assert "/inventory.html" in driver.current_url, "-- Redireccion de login fallida"
+
+    titulo_principal = driver.find_element(By.CLASS_NAME, "app_logo")
+
+    assert titulo_principal.text == "Swag Labs", "-- Titulo principal incorrecto"
+
+    titulo_secundario = driver.find_element(
+        By.CSS_SELECTOR, "div.header_secondary_container .title"
+    )
+
+    assert titulo_secundario.text == "Products", "-- Titulo secundario incorrecto"
 
 
 ####################################################################################################
@@ -27,6 +39,7 @@ def test_login_validation(login_handler):
 # Valida presencia de productos
 # Lista nombre/precio del primero.
 ####################################################################################################
+
 
 ####################################################################################################
 # Interacción con Productos: (Clase 8)
