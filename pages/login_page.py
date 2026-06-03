@@ -6,7 +6,7 @@ from selenium.webdriver.support import expected_conditions as EC
 class LogingPage:
 
     # atributos
-    URL = "https://saucedemo.com/"
+    _URL = "https://saucedemo.com/"
     _USER_INPUT = (By.ID, "user-name")
     _PASS_INPUT = (By.ID, "password")
     _LOGIN_BUTTON = (By.ID, "login-button")
@@ -20,7 +20,7 @@ class LogingPage:
 
     # metodos
     def abrir(self):
-        self.driver.get(self.URL)
+        self.driver.get(self._URL)
 
         return self
 

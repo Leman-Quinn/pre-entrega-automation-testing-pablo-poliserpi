@@ -1,8 +1,6 @@
-from selenium.webdriver.common.by import By
-import logging
 from pages.login_page import LogingPage
 from pages.inventory_page import InventoryPage
-from pages.cart_page import CartPage
+import logging
 
 ####################################################################################################
 # Consigna 1: Automatización de Login
@@ -19,6 +17,6 @@ def test_login_exitoso_credenciales_validas(driver, credenciales_validas):
     login_page = LogingPage(driver)
     login_page.abrir().login_completo(*credenciales_validas)
 
-    inventory_page = InventoryPage(driver)
+    inventory_page_main_title = InventoryPage(driver)
 
-    assert inventory_page.obtener_titulo() == "Products"
+    assert inventory_page_main_title.obtener_titulo() == "Swag Labs"

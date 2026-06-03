@@ -6,7 +6,8 @@ from selenium.webdriver.support import expected_conditions as EC
 class InventoryPage:
 
     # atributos
-    _TITLE = (By.CLASS_NAME, "title")
+    _TITLE = (By.CLASS_NAME, "app_logo")
+    _SUBTITLE = (By.CLASS_NAME, "title")
     _PRODUCTS = (By.CLASS_NAME, "inventory_item")
     _ADD_BUTTONS = (By.CSS_SELECTOR, "button[data-test*='add-to-cart']")
     _CART_BADGE = (By.CLASS_NAME, "shopping_cart_badge")
@@ -22,6 +23,9 @@ class InventoryPage:
     # metodos
     def obtener_titulo(self):
         return self.driver.find_element(*self._TITLE).text
+
+    def obtener_subtitulo(self):
+        return self.driver.find_element(*self._SUBTITLE).text
 
     def obtener_productos(self):
         return self.driver.find_elements(*self._PRODUCTS)
