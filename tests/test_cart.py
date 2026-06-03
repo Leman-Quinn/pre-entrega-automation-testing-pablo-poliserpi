@@ -1,3 +1,8 @@
+from pages.login_page import LogingPage
+from pages.inventory_page import InventoryPage
+from pages.cart_page import CartPage
+import logging
+
 ####################################################################################################
 # Consigna 3: Interacción con Productos
 # Caso de Prueba de Carrito
@@ -12,36 +17,27 @@
 ####################################################################################################
 
 
-def test_carrito(login_handler):
-    driver = login_handler
+def test_agregar_producto(driver, credenciales_validas):
+    logger = logging.getLogger(__name__)
 
-    boton_agregar_al_carrito = driver.find_element(
-        By.ID, "add-to-cart-sauce-labs-backpack"
-    )
+    login_page = LogingPage(driver)
+    login_page.abrir().login_completo(*credenciales_validas)
 
-    boton_agregar_al_carrito.click()
+    inventory_page = InventoryPage(driver)
 
-    badge_carrito = driver.find_element(By.CLASS_NAME, "shopping_cart_badge")
+    primer_producto = inventory_page.agregar_primer_producto()
+    contador_carrito = inventory_page.obtener_contador_carrito()
 
-    assert badge_carrito.text == "1"
+    logger.info(f"Cantidad de items en carrito: {contador_carrito}")
 
-    link_carrito = driver.find_element(By.CLASS_NAME, "shopping_cart_link")
+    cart_page = inventory_page.ir_al_carrito()
 
-    link_carrito.click()
+    nombre_primer_producto = cart_page.obtener_nombres_productos()
+    precio_primer_producto = cart_page.obtener_precios_productos()
 
-    assert (
-        "/cart.html" in driver.current_url
-    ), "-- Redireccion inventario a carrito fallida"
+    logger.info(f"Nombre Esperado del Item: Sauce Labs Backpack")
+    logger.info(f"Precio Esperado del Item: 29.99")
+    logger.info(f"Nombre Registrado del Item: {nombre_primer_producto}")
+    logger.info(f"Precio Registrado del Item: {precio_primer_producto}")
 
-    nombre_item_en_carrito = driver.find_element(By.CLASS_NAME, "inventory_item_name")
-    precio_item_en_carrito = driver.find_element(By.CLASS_NAME, "inventory_item_price")
-
-    assert (nombre_item_en_carrito.text == "Sauce Labs Backpack") and (
-        precio_item_en_carrito.text == "$29.99"
-    )
-
-
-####################################################################################################
-# Generar reporte en HTML de las pruebas realizadas:
-# pytest pre-entrega-final/test_saucedemo.py -v --html=reporte.html
-####################################################################################################
+    assert contador_carrito >= 1

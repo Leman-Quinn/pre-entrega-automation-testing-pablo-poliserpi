@@ -14,9 +14,15 @@ import logging
 
 
 def test_login_exitoso_credenciales_validas(driver, credenciales_validas):
+    logger = logging.getLogger(__name__)
+
     login_page = LogingPage(driver)
     login_page.abrir().login_completo(*credenciales_validas)
 
-    inventory_page_main_title = InventoryPage(driver)
+    inventory_page = InventoryPage(driver)
+    main_title = inventory_page.obtener_titulo()
 
-    assert inventory_page_main_title.obtener_titulo() == "Swag Labs"
+    logger.info(f"Título principal esperado: Swag Labs")
+    logger.info(f"Título principal encontrado: {main_title}")
+
+    assert main_title == "Swag Labs"

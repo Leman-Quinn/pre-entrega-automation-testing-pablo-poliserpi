@@ -8,6 +8,7 @@ class CartPage:
     # atributos
     _CART_ITEMS = (By.CLASS_NAME, "cart_item")
     _ITEM_NAMES = (By.CLASS_NAME, "inventory_item_name")
+    _ITEM_PRICES = (By.CLASS_NAME, "inventory_item_price")
     _CHECKOUT_BUTTON = (By.ID, "checkout")
     _CONTINUE_SHOPPING = (By.ID, "continue-shopping")
 
@@ -24,6 +25,10 @@ class CartPage:
     def obtener_nombres_productos(self):
         elementos_nombre = self.driver.find_elements(*self._ITEM_NAMES)
         return [elemento.text for elemento in elementos_nombre]
+
+    def obtener_precios_productos(self):
+        elementos_precio = self.driver.find_elements(*self._ITEM_PRICES)
+        return [elemento.text for elemento in elementos_precio]
 
     def continuar_comprando(self):
         """Regresa a la página de inventario."""

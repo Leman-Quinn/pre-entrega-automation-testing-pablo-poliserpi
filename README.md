@@ -2,7 +2,7 @@
 
 ## Autor: Pablo Poliserpi
 
-Repositorio dedicado a la primera de dos entregas pertinentes al proyecto final de QA Automation, Talento Tech
+Repositorio a las dos entregas pertinentes al proyecto final de QA Automation, Talento Tech
 
 ### Tecnologias y Proposito:
 
@@ -22,25 +22,26 @@ pip install -r requirements.txt
 
 Comandos de ejecución:
 
-- Todas las pruebas
-```
+- Todas las pruebas con reporte automático.
+  
+``` python
 py -m pytest -v --html=reporte.html --self-contained-html --log-cli-level=INFO
 ```
 
-- Prueba de Login
+- Prueba de Login con reporte automático.
 
-```
-py -m pytest -v --html=reporte.html --self-contained-html --log-cli-level=INFO tests/test_login.py::test_login_validation
-```
-
-- Prueba de Inventario
-
-```
-py -m pytest -v --html=reporte.html --self-contained-html --log-cli-level=INFO tests/test_login.py::test_inventory
+``` python
+py -m pytest -v --html=reporte.html --self-contained-html --log-cli-level=INFO tests/test_login.py
 ```
 
-- Prueba de Carrito
+- Prueba de Inventario con reporte automático.
 
+``` python
+py -m pytest -v --html=reporte.html --self-contained-html --log-cli-level=INFO tests/test_inventory.py
 ```
-py -m pytest -v --html=reporte.html --self-contained-html --log-cli-level=INFO tests/test_login.py::test_carrito
+
+- Prueba de Carrito con reporte automático.
+
+``` python
+py -m pytest -v --html=reporte.html --self-contained-html --log-cli-level=INFO tests/test_cart
 ```

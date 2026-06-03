@@ -1,5 +1,6 @@
 from pages.login_page import LogingPage
 from pages.inventory_page import InventoryPage
+from pages.cart_page import CartPage
 import logging
 
 ####################################################################################################
@@ -11,15 +12,34 @@ import logging
 ####################################################################################################
 # Criterios mínimos:
 # Valida título
-# Valida presencia de productos
+# Valida precesencia de produtos
 # Lista nombre/precio del primero.
 ####################################################################################################
 
 
 def test_titulo_de_pagina(driver, credenciales_validas):
+    logger = logging.getLogger(__name__)
+
     login_page = LogingPage(driver)
     login_page.abrir().login_completo(*credenciales_validas)
 
-    inventory_page_sub_title = InventoryPage(driver).obtener_subtitulo()
+    inventory_page = InventoryPage(driver)
+    sub_title = inventory_page.obtener_subtitulo()
 
-    assert inventory_page_sub_title == "Products"
+    logger.info(f"Título secundario esperado: Products")
+    logger.info(f"Título secundario encontrado: {sub_title}")
+
+    assert sub_title == "Products"
+
+
+def test_existencia_productos(driver, credenciales_validas):
+    logger = logging.getLogger(__name__)
+
+    login_page = LogingPage(driver)
+    login_page.abrir().login_completo(*credenciales_validas)
+
+    inventory_page = InventoryPage(driver)
+
+    productos = inventory_page.obtener_productos()
+
+    logger.info(f"Contenido del primer bloque: {productos[0].text}")
