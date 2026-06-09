@@ -2,7 +2,7 @@
 
 ## Autor: Pablo Poliserpi
 
-Repositorio a las dos entregas pertinentes al proyecto final de QA Automation, Talento Tech
+Repositorio de las dos entregas pertinentes al proyecto final de QA Automation, Talento Tech
 
 ### Tecnologias y Proposito:
 
