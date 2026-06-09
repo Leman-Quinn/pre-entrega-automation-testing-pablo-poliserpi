@@ -14,10 +14,11 @@ import logging
 # Login automatizado con espera explícita y validación de /inventory.html y “Products/Swag Labs”.
 ####################################################################################################
 
+# carga credenciales primero
+CASOS_LOGIN = leer_csv_login("datos/login.csv")
 
-@pytest.mark.parametrize(
-    "usuario, clave, debe_funcionar", leer_csv_login("datos/login.csv")
-)
+
+@pytest.mark.parametrize("usuario, clave, debe_funcionar", CASOS_LOGIN)
 def test_login(driver, usuario, clave, debe_funcionar):
     logger = logging.getLogger(__name__)
 
@@ -34,4 +35,4 @@ def test_login(driver, usuario, clave, debe_funcionar):
 
         assert main_title == "Swag Labs"
     else:
-        assert login_page.obtener_mensaje_error()
+        assert "Epic sadface" in login_page.obtener_mensaje_error()

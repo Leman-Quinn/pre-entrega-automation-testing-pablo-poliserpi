@@ -16,6 +16,7 @@ def driver():
     driver.quit()
 
 
+# DEPRECATED - DO NOT USE
 @pytest.fixture(scope="session")
 def credenciales_validas():
 
@@ -25,6 +26,7 @@ def credenciales_validas():
     return usuario, clave
 
 
+# DEPRECATED - DO NOT USE
 @pytest.fixture(scope="session")
 def credenciales_invalidas():
 
@@ -34,6 +36,7 @@ def credenciales_invalidas():
     return usuario, clave
 
 
+# DEPRECATED - DO NOT USE
 @pytest.fixture(scope="session")
 def usuario_bloqueado():
 
