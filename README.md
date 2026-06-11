@@ -4,9 +4,9 @@
 
 Repositorio de las dos entregas pertinentes al proyecto final de QA Automation, Talento Tech
 
-### Tecnologias y Proposito:
+### Tecnologias y Proposito
 
-El proyecto utiliza Python 3.14, Pytest y Selenium con el objetivo de realizar una serie de pruebas de calidad en la página demo objetivo (https://saucedemo.com) que incluyen pruebas de login, de inventario, de UI y funcionalidad de carrito de compra.
+El proyecto utiliza Python 3.14, Pytest y Selenium con el objetivo de realizar una serie de pruebas de calidad en la página demo objetivo (```https://saucedemo.com```) que incluyen pruebas de login, de inventario, de UI y funcionalidad de carrito de compra.
 
 ### Dependencias
 
@@ -14,7 +14,7 @@ Dentro del archivo ```requirement.txt``` se puede encontrar la lista de dependec
 
 Ejecutar el siguiente comando para su instalación:
 
-```
+``` python
 pip install -r requirements.txt
 ```
 

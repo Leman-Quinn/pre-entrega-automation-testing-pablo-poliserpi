@@ -36,6 +36,18 @@ class InventoryPage:
 
         return self
 
+    def agregar_producto_por_nombre(self, nombre_producto):
+        arr_bloques = self.driver.find_elements(*self._PRODUCTS)
+
+        for bloque in arr_bloques:
+            nombre_bloque = bloque.find_element(By.CLASS_NAME, "inventory_item_name")
+
+            if nombre_bloque.text == nombre_producto:
+                boton_agregar = self.driver.find_element(*self._ADD_BUTTONS)
+                boton_agregar.click()
+
+        return self
+
     def obtener_contador_carrito(self):
         try:
             badge = self.driver.find_element(*self._CART_BADGE)
