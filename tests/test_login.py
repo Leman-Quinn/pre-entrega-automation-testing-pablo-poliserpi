@@ -18,21 +18,31 @@ import logging
 CASOS_LOGIN = leer_csv_login("datos/login.csv")
 
 
+# decorator para ciclar sets de datos automaticamente
 @pytest.mark.parametrize("usuario, clave, debe_funcionar", CASOS_LOGIN)
 def test_login(driver, usuario, clave, debe_funcionar):
+    # se instancia un log
     logger = logging.getLogger(__name__)
 
+    # se instancia clase de LoginPage pasandole driver
     login_page = LogingPage(driver)
+    # se abre la pagina demo y se logea
     login_page.abrir().login_completo(usuario, clave)
 
+    # se instancia clase de InventoryPage con pasandole driver
     inventory_page = InventoryPage(driver)
 
+    # if para separar distintos flujos segun credenciales
     if debe_funcionar:
+        # se captura el titulo
         main_title = inventory_page.obtener_titulo()
 
+        # se guarda en log el esperado y el obtenido
         logger.info(f"Título principal esperado: Swag Labs")
         logger.info(f"Título principal encontrado: {main_title}")
 
+        # se evalua el titulo
         assert main_title == "Swag Labs"
     else:
+        # se chequea que haya dado mensaje de error
         assert "Epic sadface" in login_page.obtener_mensaje_error()
