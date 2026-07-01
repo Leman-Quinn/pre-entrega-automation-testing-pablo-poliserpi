@@ -1,7 +1,11 @@
 import requests
+import pytest
 
-URL = "https://reqres.in/api/users?page=2"
+headers = {"x-api-key": "free_user_3FsrRrHPqheBwC9km1N1nhcpZb8"}
+body = {"email": "eve.holt@reqres.in", "password": "cityslicka"}
 
-response = requests.get(URL)
-print(response.status_code)
-print(response.json())
+
+def test_login_api():
+    response = requests.post("https://reqres.in/api/login", headers=headers, json=body)
+
+    assert response.status_code() == 200
