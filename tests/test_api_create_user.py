@@ -4,27 +4,9 @@ import pytest
 URL = "https://reqres.in/api/users"
 headers = {"x-api-key": "free_user_3FsrRrHPqheBwC9km1N1nhcpZb8"}
 FAKE_USERS = [
-    {
-        "id": "7",
-        "email": "fakemail7@reqres.in",
-        "first_name": "fakename7",
-        "last_name": "fakelastname7",
-        "avatar": "fakeavatar7",
-    },
-    {
-        "id": "8",
-        "email": "fakemail8@reqres.in",
-        "first_name": "fakename8",
-        "last_name": "fakelastname8",
-        "avatar": "fakeavatar8",
-    },
-    {
-        "id": "9",
-        "email": "fakemail9@reqres.in",
-        "first_name": "fakename9",
-        "last_name": "fakelastname9",
-        "avatar": "fakeavatar9",
-    },
+    ("7", "fakemail7@reqres.in", "fakename7", "fakelastname7", "fakeavatar7"),
+    ("8", "fakemail8@reqres.in", "fakename8", "fakelastname8", "fakeavatar8"),
+    ("9", "fakemail9@reqres.in", "fakename9", "fakelastname9", "fakeavatar9"),
 ]
 
 
@@ -40,5 +22,13 @@ def test_login(id, email, first_name, last_name, avatar):
 
     response = requests.post(URL, headers=headers, json=body)
 
-    print(response.status_code)
-    print(response.json())
+    assert response.status_code == 201
+
+    data = response.json()
+
+    assert data["id"] == body["id"]
+    assert data["email"] == body["email"]
+    assert data["first_name"] == body["first_name"]
+    assert data["last_name"] == body["last_name"]
+    assert data["avatar"] == body["avatar"]
+    assert "2026" in data["createdAt"]
