@@ -4,15 +4,13 @@ from utils.datos import leer_csv_login
 import pytest
 from utils.logger import logger
 
-####################################################################################################
-# Consigna 1: Automatización de Login
-# Navegar a la página de login de saucedemo.com
-# Ingresar credenciales válidas (usuario: "standard_user", contraseña: "secret_sauce")
-# Validar login exitoso verificando que se haya redirigido a la página de inventario
-####################################################################################################
-# Criterios mínimos:
-# Login automatizado con espera explícita y validación de /inventory.html y “Products/Swag Labs”.
-####################################################################################################
+#########################################################
+# Caso de Prueba 1: Automatizacion de Login
+# 1. Navegar a la página de login de saucedemo.com
+# 2. Ingresar credenciales validas e invalidas
+# 3. Validar que cada caso de prueba haya sido exitoso
+#########################################################
+
 
 # carga credenciales primero
 CASOS_LOGIN = leer_csv_login("datos/login.csv")
@@ -21,13 +19,13 @@ CASOS_LOGIN = leer_csv_login("datos/login.csv")
 # decorator para ciclar sets de datos automaticamente
 @pytest.mark.parametrize("usuario, clave, debe_funcionar", CASOS_LOGIN)
 def test_login(driver, usuario, clave, debe_funcionar):
-    logger.info("Inicio de test_login.py")
+    logger.info("Inicio de test_login.py::test_login")
 
     # se instancia clase de LoginPage pasandole driver
     login_page = LogingPage(driver)
 
-    logger.info("Accediendo al sitio web")
     # se abre la pagina demo y se logea
+    logger.info("Accediendo al sitio web")
     login_page.abrir().login_completo(usuario, clave)
 
     # se instancia clase de InventoryPage con pasandole driver
@@ -36,22 +34,24 @@ def test_login(driver, usuario, clave, debe_funcionar):
     # if para separar distintos flujos segun credenciales
     if debe_funcionar:
         logger.info("Credenciales correctas")
-        logger.info("Evaluando titulo principal")
-        # se captura el titulo
+
+        # se captura y el titulo
         main_title = inventory_page.obtener_titulo()
 
         # se evalua el titulo
+        logger.info("Evaluando titulo principal")
         assert main_title == "Swag Labs", "Titulo incorrecto"
-        if main_title == "Swag Labs":
-            logger.info("Titulo correcto")
+        logger.info("Titulo correcto")
+
     else:
-        # se chequea que haya dado mensaje de error
         logger.info("Credenciales incorrectas")
+
+        # se chequea que haya dado mensaje de acceso denegado
         logger.info("Evaluando mensaje de acceso denegado")
         assert (
             "Epic sadface" in login_page.obtener_mensaje_error()
         ), "Mensaje de acceso denegado incorrecto"
-        if "Epic sadface" in login_page.obtener_mensaje_error():
-            logger.info("Mensaje de acceso denegado correcto")
+
+        logger.info("Mensaje de acceso denegado correcto")
 
     logger.info("Fin de test_login.py")
