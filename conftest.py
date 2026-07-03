@@ -1,6 +1,7 @@
 import pytest
 from selenium import webdriver
 import time
+import pathlib
 
 
 @pytest.fixture(scope="function")
@@ -44,3 +45,21 @@ def usuario_bloqueado():
     clave = "secret_sauce"
 
     return usuario, clave
+
+
+@pytest.hookimpl(tryfirst=True, hookwrapper=True)
+def pytest_runtest_makereport(item, call):
+    outcome = yield
+
+    report = outcome.get_result()
+
+    if report.when == "call" and report.failed:
+        driver = item.funcargs.get("driver")
+
+        if driver:
+            target = pathlib.Path("reports/screenshots")
+            target.mkdir(parents=True, exist_ok=True)
+
+            file_name = target / f"{item.name}.png"
+
+            driver.save_screenshot(str(file_name))
