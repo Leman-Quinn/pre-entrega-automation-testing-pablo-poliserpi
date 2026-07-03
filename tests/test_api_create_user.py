@@ -3,7 +3,7 @@ import pytest
 from utils.logger import logger
 
 ####################################################################
-# Caso de Prueba API 3: Crear usuarios de API
+# Caso de Prueba API 3: Crear usuarios de API (ReqRes)
 # 1. Emitir un POST con usuarios válidos falsos a la API
 # 2. Verificar que las entradas creaciones hayan sido exitosas
 ####################################################################

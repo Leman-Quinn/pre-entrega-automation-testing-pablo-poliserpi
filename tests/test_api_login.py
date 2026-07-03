@@ -4,7 +4,7 @@ from utils.datos import leer_csv_login_api
 from utils.logger import logger
 
 ####################################################################
-# Caso de Prueba API 1: Acceso a API
+# Caso de Prueba API 1: Acceso a API (ReqRes)
 # 1. Emitir un POST con credenciales validas e invalidas a la API
 # 2. Verificar que los casos hayan sido exitosos
 ####################################################################

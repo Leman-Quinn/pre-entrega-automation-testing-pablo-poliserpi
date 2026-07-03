@@ -3,7 +3,7 @@ import pytest
 from utils.logger import logger
 
 ####################################################################
-# Caso de Prueba API 2: Leer usuarios de API
+# Caso de Prueba API 2: Leer usuarios de API (ReqRes)
 # 1. Emitir un GET con credenciales validas a la API
 # 2. Verificar que las entradas contengan todos los campos requeridos
 ####################################################################
