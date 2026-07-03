@@ -11,8 +11,10 @@ from utils.logger import logger
 
 # se define la URL en una constante
 URL = "https://reqres.in/api/login"
+
 # se define la api key en una constante
 headers = {"x-api-key": "free_user_3FsrRrHPqheBwC9km1N1nhcpZb8"}
+
 # se cargan los casos de login externos
 CASOS_LOGIN_API = leer_csv_login_api("datos/api_login.csv")
 
