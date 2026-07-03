@@ -2,6 +2,7 @@ import pytest
 from selenium import webdriver
 import time
 import pathlib
+import pytest_html
 
 
 @pytest.fixture(scope="function")
@@ -63,3 +64,20 @@ def pytest_runtest_makereport(item, call):
             file_name = target / f"{item.name}.png"
 
             driver.save_screenshot(str(file_name))
+
+            if hasattr(report, "extra"):
+                report.extra.append(
+                    {"name": "screenshot", "format": "image", "content": str(file_name)}
+                )
+
+            extras = getattr(report, "extras", [])
+
+            # DEBUGING
+            print(file_name)
+            print(file_name.exists())
+
+            relative_path = pathlib.Path("screenshots") / file_name.name
+
+            extras.append(pytest_html.extras.png(str(relative_path)))
+
+            report.extras = extras

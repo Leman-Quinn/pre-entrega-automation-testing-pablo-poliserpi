@@ -45,4 +45,5 @@ def test_login(driver, usuario, clave, debe_funcionar):
         assert main_title == "Swag Labs"
     else:
         # se chequea que haya dado mensaje de error
-        assert "Epic sadface" in login_page.obtener_mensaje_error()
+        assert "Happy" in login_page.obtener_mensaje_error()
+        # assert "Epic sadface" in login_page.obtener_mensaje_error()
