@@ -21,6 +21,10 @@ def test_get_users():
     # se emite un GET a la API
     response = requests.get(URL, headers=headers)
 
+    # se evalua la respuesta inmediata
+    assert response.status_code == 200, "Error: status code esperado incorrecto"
+    logger.info(f"Status code recibido correcto: {response.status_code}")
+
     # se guarda el body de la respuesta
     data = response.json()
 
