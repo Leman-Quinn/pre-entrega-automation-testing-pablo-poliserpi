@@ -5,7 +5,7 @@ import pytest
 from utils.logger import logger
 
 #########################################################
-# Caso de Prueba 1: Automatizacion de Login
+# Caso de Prueba UI 1: Automatizacion de Login
 # 1. Navegar a la página de login de saucedemo.com
 # 2. Ingresar credenciales validas e invalidas
 # 3. Validar que cada caso de prueba haya sido exitoso

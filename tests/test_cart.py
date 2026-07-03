@@ -7,7 +7,7 @@ import pytest
 from utils.logger import logger
 
 #########################################################
-# Caso de Prueba 3: Interacción con Productos
+# Caso de Prueba UI 3: Interacción con Productos
 # 1. Añadir un producto al carrito haciendo clic en el botón correspondiente
 # 2. Verificar que el contador del carrito se incremente correctamente
 # 3. Navegar al carrito de compras

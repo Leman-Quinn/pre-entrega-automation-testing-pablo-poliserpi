@@ -4,7 +4,7 @@ from pages.cart_page import CartPage
 from utils.logger import logger
 
 #######################################################################################################
-# Caso de Prueba 2: Navegación y Verificación de Catálogo
+# Caso de Prueba UI 2: Navegación y Verificación de Catálogo
 # 1. Acceder al sitio con credeciales válidas
 # 2. Verificar que el título de la pagina de inventario sea correcto
 # 3. Comprobar que existen productos visibles en la página verificando la existencia de al menos uno
