@@ -1,0 +1,82 @@
+2026-07-03 21:51:21,168 INFO talento_tech - Inicio de test_api_create_user.py::test_create_users
+2026-07-03 21:51:22,024 INFO talento_tech - Status code recibido correcto: 201
+2026-07-03 21:51:22,024 INFO talento_tech - Creación de usuarios exitosa
+2026-07-03 21:51:22,024 INFO talento_tech - Fin de test_api_create_user.py::test_create_users
+2026-07-03 21:51:22,029 INFO talento_tech - Inicio de test_api_create_user.py::test_create_users
+2026-07-03 21:51:22,606 INFO talento_tech - Status code recibido correcto: 201
+2026-07-03 21:51:22,606 INFO talento_tech - Creación de usuarios exitosa
+2026-07-03 21:51:22,607 INFO talento_tech - Fin de test_api_create_user.py::test_create_users
+2026-07-03 21:51:22,610 INFO talento_tech - Inicio de test_api_create_user.py::test_create_users
+2026-07-03 21:51:23,191 INFO talento_tech - Status code recibido correcto: 201
+2026-07-03 21:51:23,192 INFO talento_tech - Creación de usuarios exitosa
+2026-07-03 21:51:23,192 INFO talento_tech - Fin de test_api_create_user.py::test_create_users
+2026-07-03 21:51:23,196 INFO talento_tech - Inicio de test_api_login.py::test_login
+2026-07-03 21:51:23,777 INFO talento_tech - Fin de test_api_login.py::test_login
+2026-07-03 21:51:23,780 INFO talento_tech - Inicio de test_api_login.py::test_login
+2026-07-03 21:51:24,364 INFO talento_tech - Fin de test_api_login.py::test_login
+2026-07-03 21:51:24,368 INFO talento_tech - Inicio de test_api_user.py::test_get_users
+2026-07-03 21:51:25,279 INFO talento_tech - Status code recibido correcto: 200
+2026-07-03 21:51:25,280 INFO talento_tech - Fin de test_api_user.py::test_get_users
+2026-07-03 21:51:25,399 WARNING selenium.webdriver.common.selenium_manager - The geckodriver version (0.36.0) detected in PATH at C:\WINDOWS\geckodriver.exe might not be compatible with the detected firefox version (152.0.4); currently, geckodriver 0.37.0 is recommended for firefox 152.*, so it is advised to delete the driver in PATH and retry
+2026-07-03 21:51:32,815 INFO talento_tech - Inicio de test_cart.py::test_agregar_producto
+2026-07-03 21:51:32,815 INFO talento_tech - Accediendo a sitio web con credenciales validas
+2026-07-03 21:51:36,529 INFO talento_tech - Nombre(s) esperado del/los item(s): ['Sauce Labs Backpack', 'Sauce Labs Bike Light', 'Sauce Labs Bolt T-Shirt']
+2026-07-03 21:51:36,529 INFO talento_tech - Nombre(s) encontrado del/los item(s): ['Sauce Labs Backpack', 'Sauce Labs Bike Light', 'Sauce Labs Bolt T-Shirt']
+2026-07-03 21:51:36,529 INFO talento_tech - Precio(s) esperado del/los item(s): $29.99, $9.99, $15.99
+2026-07-03 21:51:36,529 INFO talento_tech - Precio(s) encontrado del/los item(s): ['$29.99', '$9.99', '$15.99']
+2026-07-03 21:51:36,529 INFO talento_tech - Evaluando cantidad de items en carrito
+2026-07-03 21:51:36,529 INFO talento_tech - Cantidad de items en carrito: 3
+2026-07-03 21:51:36,529 INFO talento_tech - Fin de test_cart.py::test_agregar_producto
+2026-07-03 21:51:43,906 WARNING selenium.webdriver.common.selenium_manager - The geckodriver version (0.36.0) detected in PATH at C:\WINDOWS\geckodriver.exe might not be compatible with the detected firefox version (152.0.4); currently, geckodriver 0.37.0 is recommended for firefox 152.*, so it is advised to delete the driver in PATH and retry
+2026-07-03 21:51:51,484 INFO talento_tech - Inicio de test_inventory.py::test_titulo_de_pagina
+2026-07-03 21:51:51,484 INFO talento_tech - Accediendo a sitio web con credenciales validas
+2026-07-03 21:51:54,372 INFO talento_tech - Evaluando titulo secundario
+2026-07-03 21:51:54,373 INFO talento_tech - Titulo secundario correcto
+2026-07-03 21:51:54,373 INFO talento_tech - Fin de test_inventory.py::test_titulo_de_pagina
+2026-07-03 21:52:01,428 WARNING selenium.webdriver.common.selenium_manager - The geckodriver version (0.36.0) detected in PATH at C:\WINDOWS\geckodriver.exe might not be compatible with the detected firefox version (152.0.4); currently, geckodriver 0.37.0 is recommended for firefox 152.*, so it is advised to delete the driver in PATH and retry
+2026-07-03 21:52:08,588 INFO talento_tech - Inicio de test_inventory.py::test_existencia_producto
+2026-07-03 21:52:08,589 INFO talento_tech - Accediendo al sitio web con credenciales validas
+2026-07-03 21:52:11,013 INFO talento_tech - Capturando primer bloque con productos
+2026-07-03 21:52:11,380 INFO talento_tech - Contenido del primer bloque: Sauce Labs Backpack
+carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection.
+$29.99
+Add to cart
+2026-07-03 21:52:11,380 INFO talento_tech - Fin de test_inventory.py::test_existencia_producto
+2026-07-03 21:52:17,287 WARNING selenium.webdriver.common.selenium_manager - The geckodriver version (0.36.0) detected in PATH at C:\WINDOWS\geckodriver.exe might not be compatible with the detected firefox version (152.0.4); currently, geckodriver 0.37.0 is recommended for firefox 152.*, so it is advised to delete the driver in PATH and retry
+2026-07-03 21:52:24,521 INFO talento_tech - Inicio de test_login.py::test_login
+2026-07-03 21:52:24,521 INFO talento_tech - Accediendo al sitio web
+2026-07-03 21:52:26,882 INFO talento_tech - Probando credenciales correctas
+2026-07-03 21:52:26,906 INFO talento_tech - Evaluando titulo principal
+2026-07-03 21:52:26,906 INFO talento_tech - Titulo correcto
+2026-07-03 21:52:26,906 INFO talento_tech - Fin de test_login.py::test_login
+2026-07-03 21:52:33,290 WARNING selenium.webdriver.common.selenium_manager - The geckodriver version (0.36.0) detected in PATH at C:\WINDOWS\geckodriver.exe might not be compatible with the detected firefox version (152.0.4); currently, geckodriver 0.37.0 is recommended for firefox 152.*, so it is advised to delete the driver in PATH and retry
+2026-07-03 21:52:40,827 INFO talento_tech - Inicio de test_login.py::test_login
+2026-07-03 21:52:40,827 INFO talento_tech - Accediendo al sitio web
+2026-07-03 21:52:43,472 INFO talento_tech - Probando credenciales incorrectas
+2026-07-03 21:52:43,473 INFO talento_tech - Evaluando mensaje de acceso denegado
+2026-07-03 21:52:50,693 WARNING selenium.webdriver.common.selenium_manager - The geckodriver version (0.36.0) detected in PATH at C:\WINDOWS\geckodriver.exe might not be compatible with the detected firefox version (152.0.4); currently, geckodriver 0.37.0 is recommended for firefox 152.*, so it is advised to delete the driver in PATH and retry
+2026-07-03 21:52:58,238 INFO talento_tech - Inicio de test_login.py::test_login
+2026-07-03 21:52:58,238 INFO talento_tech - Accediendo al sitio web
+2026-07-03 21:53:03,559 INFO talento_tech - Probando credenciales correctas
+2026-07-03 21:53:03,628 INFO talento_tech - Evaluando titulo principal
+2026-07-03 21:53:03,629 INFO talento_tech - Titulo correcto
+2026-07-03 21:53:03,629 INFO talento_tech - Fin de test_login.py::test_login
+2026-07-03 21:53:12,262 WARNING selenium.webdriver.common.selenium_manager - The geckodriver version (0.36.0) detected in PATH at C:\WINDOWS\geckodriver.exe might not be compatible with the detected firefox version (152.0.4); currently, geckodriver 0.37.0 is recommended for firefox 152.*, so it is advised to delete the driver in PATH and retry
+2026-07-03 21:53:19,561 INFO talento_tech - Inicio de test_login.py::test_login
+2026-07-03 21:53:19,561 INFO talento_tech - Accediendo al sitio web
+2026-07-03 21:53:22,716 INFO talento_tech - Probando credenciales incorrectas
+2026-07-03 21:53:22,716 INFO talento_tech - Evaluando mensaje de acceso denegado
+2026-07-03 21:53:28,819 INFO talento_tech - Inicio de test_post_lifecyle.py::test_post
+2026-07-03 21:53:29,345 INFO talento_tech - Status code recibido correcto: 201
+2026-07-03 21:53:29,345 INFO talento_tech - campo id recibido correcto: 101
+2026-07-03 21:53:29,345 INFO talento_tech - Tiempo de respuesta: < 2 segundos
+2026-07-03 21:53:29,345 INFO talento_tech - Fin de test_post_lifecyle.py::test_post
+2026-07-03 21:53:29,348 INFO talento_tech - Inicio de test_post_lifecyle.py::test_patch
+2026-07-03 21:53:29,851 INFO talento_tech - Status code recibido correcto: 200
+2026-07-03 21:53:29,852 INFO talento_tech - Edición de entrada exitosa
+2026-07-03 21:53:29,852 INFO talento_tech - Tiempo de respuesta: < 1 segundos
+2026-07-03 21:53:29,852 INFO talento_tech - Fin de test_post_lifecyle.py::test_patch
+2026-07-03 21:53:29,856 INFO talento_tech - Inicio de test_post_lifecyle.py::test_delete
+2026-07-03 21:53:30,368 INFO talento_tech - Status code recibido correcto: 200
+2026-07-03 21:53:30,368 INFO talento_tech - Tiempo de respuesta: < 1 segundos
+2026-07-03 21:53:30,368 INFO talento_tech - Fin de test_post_lifecyle.py::test_delete

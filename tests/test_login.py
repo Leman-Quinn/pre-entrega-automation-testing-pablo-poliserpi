@@ -33,7 +33,7 @@ def test_login(driver, usuario, clave, debe_funcionar):
 
     # if para separar distintos flujos segun credenciales
     if debe_funcionar:
-        logger.info("Credenciales correctas")
+        logger.info("Probando credenciales correctas")
 
         # se captura y el titulo
         main_title = inventory_page.obtener_titulo()
@@ -44,14 +44,14 @@ def test_login(driver, usuario, clave, debe_funcionar):
         logger.info("Titulo correcto")
 
     else:
-        logger.info("Credenciales incorrectas")
+        logger.info("Probando credenciales incorrectas")
 
         # se chequea que haya dado mensaje de acceso denegado
         logger.info("Evaluando mensaje de acceso denegado")
         assert (
-            "Epic sadface" in login_page.obtener_mensaje_error()
+            "Credenciales invalidas" in login_page.obtener_mensaje_error()
         ), "Mensaje de acceso denegado incorrecto"
 
         logger.info("Mensaje de acceso denegado correcto")
 
-    logger.info("Fin de test_login.py")
+    logger.info("Fin de test_login.py::test_login")

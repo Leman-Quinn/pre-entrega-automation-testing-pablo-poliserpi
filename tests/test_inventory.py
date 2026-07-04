@@ -31,7 +31,7 @@ def test_titulo_de_pagina(driver, credenciales_validas):
     assert sub_title == "Products", "Titulo secundario incorrecto"
     logger.info("Titulo secundario correcto")
 
-    logger.info("Fin de test_titulo_de_pagina.py")
+    logger.info("Fin de test_inventory.py::test_titulo_de_pagina")
 
 
 def test_existencia_productos(driver, credenciales_validas):

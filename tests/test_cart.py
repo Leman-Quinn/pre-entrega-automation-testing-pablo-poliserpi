@@ -1,7 +1,6 @@
 from pages.login_page import LogingPage
 from pages.inventory_page import InventoryPage
 from pages.cart_page import CartPage
-from utils.datos import leer_csv_login
 from utils.datos import leer_json_productos
 import pytest
 from utils.logger import logger
@@ -33,6 +32,7 @@ def test_agregar_producto(driver, credenciales_validas):
 
     # se obtiene un array con los productos en la pagina
     for producto in LISTA_PRODUCTOS:
+        # se agrega los productos que figuran en archivo externo
         inventory_page.agregar_producto_por_nombre(producto)
 
     # se obtiene contador de carrito
