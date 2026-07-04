@@ -1,4 +1,6 @@
 pytest==9.0.3
 selenium==4.43.0
+requests==2.32.4
 webdriver-manager
-pytest-html=4.2.0
+pytest-html==4.2.0
+pytest-check==2.8.0

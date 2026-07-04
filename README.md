@@ -1,12 +1,21 @@
-# TalentoTech_QA_Automation
+# TalentoTech - QA Automation
 
 ## Autor: Pablo Poliserpi
 
 Repositorio de las dos entregas pertinentes al proyecto final de QA Automation, Talento Tech
 
-### Tecnologias y Proposito
+### Proposito
 
-El proyecto utiliza Python 3.14, Pytest y Selenium con el objetivo de realizar una serie de pruebas de calidad en la página demo objetivo (```https://saucedemo.com```) que incluyen pruebas de login, de inventario, de UI y funcionalidad de carrito de compra.
+El objetivo del proyecto es realizar una serie de pruebas de calidad automatizadas en las páginas demo objetivo (```https://saucedemo.com/```, ```https://reqres.in/```, ```https://jsonplaceholder.typicode.com```).  
+Estas incluyen pruebas de UI (login, inventory, cart) y pruebas de funcionamiento de API.
+
+### Tecnologias
+
+El proyecto utiliza Python, Pytest y Selenium, asi como librerias del entorno Python como PathLib para manejor de rutas, Pytest_html para reportes autocontenidos, Logging para creacion y manejo de logs, Request para conexiones HTTPS.  
+
+### Features
+
+El proyecto se centra en utilizar técnicas de QA donde prima la reutilización de recursos, buenas prácticas de código para minimizar la incidencia de errores en las pruebas, estrategias de programación para evitar hardlocks en pruebas y uso de decorators (fixtures, parametrizaciones, marks) para evitar duplicación de datos y hardcoding asi como extracción automática de datos en archivos externos con el fin de proveer escalabilidad a futuro.
 
 ### Dependencias
 
@@ -18,6 +27,11 @@ Ejecutar el siguiente comando para su instalación:
 pip install -r requirements.txt
 ```
 
+### Reportes y Logs
+
+El proyecto centraliza los resultados dentro de la carpeta ```reports/```, donde se pueden encontrar capturas de pantalla automáticas en casos donde las pruebas hayan fallado, tanto esperada como inesperadamente.  
+Dentro de la carpeta ```logs/``` se encuentran los archivos ```.log``` con un desglose magnificado para casos de depuración.
+
 ### Ejecución de Pruebas
 
 Comandos de ejecución:
@@ -25,23 +39,47 @@ Comandos de ejecución:
 - Todas las pruebas con reporte automático.
   
 ``` python
-py -m pytest -v --html=reporte.html --self-contained-html --log-cli-level=INFO
+pytest
 ```
 
-- Prueba de Login con reporte automático.
+- Pruebas de Login.
 
 ``` python
-py -m pytest -v --html=reporte.html --self-contained-html --log-cli-level=INFO tests/test_login.py
+pytest tests/test_login.py
 ```
 
-- Prueba de Inventario con reporte automático.
+- Pruebas de Inventory.
 
 ``` python
-py -m pytest -v --html=reporte.html --self-contained-html --log-cli-level=INFO tests/test_inventory.py
+pytest tests/test_inventory.py
 ```
 
-- Prueba de Carrito con reporte automático.
+- Pruebas de Cart.
 
 ``` python
-py -m pytest -v --html=reporte.html --self-contained-html --log-cli-level=INFO tests/test_cart
+pytest tests/test_cart
+```
+
+- Pruebas de login en API.
+
+``` python
+pytest tests/test_api_login.py
+```
+
+- Pruebas de creacion de usuario en API.
+
+``` python
+pytest tests/test_create_user.py
+```
+
+- Pruebas de consistencia estructural en API.
+
+``` python
+pytest tests/test_user.py
+```
+
+- Prueba encadenada integral en API.
+
+``` python
+pytest tests/test_post_lifecycle.py
 ```
